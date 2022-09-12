@@ -1,1 +1,63 @@
- 
+/*GLOBAL CSS---------------------------------------*/
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 128px;
+}
+
+.logo-site:hover,
+.header-menu:hover,
+.header-user:hover {
+  cursor: pointer;
+}
+
+/*LOGO SITE----------------------------------------*/
+.logo-site {
+  display: flex;
+  align-items: center;
+}
+
+.logo-site img {
+  width: 50px;
+  margin-right: 16px;
+}
+
+.logo-site span {
+  font-size: 22px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+}
+
+/*HEADER MENU---------------------------------------*/
+
+.header-menu ul {
+  display: flex;
+  gap: 48px;
+  font-size: 14px;
+  list-style: none;
+}
+
+.header-menu li {
+  transition: all 0.2s;
+}
+
+.header-menu li:hover {
+  opacity: 0.6;
+}
+
+/*HEADER USER---------------------------------------*/
+.header-user {
+  display: flex;
+  gap: 12px;
+}
+
+.header-user span {
+  color: #ffae36;
+  transition: all 0.2s;
+}
+
+.header-user span:hover {
+  opacity: 0.6;
+}
