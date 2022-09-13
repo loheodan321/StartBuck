@@ -43,14 +43,20 @@
 /*FOOTER INPUT------------------------------------------*/
 .footer-input input {
   display: block;
-  width: 260px;
+  width: 236px;
   height: 40px;
   margin-bottom: 32px;
+  padding-left: 24px;
   border: none;
   border-bottom: 1px solid;
   transition: border 0.2s;
 }
-
-.footer-input input:hover {
+.footer-input input:-webkit-autofill,
+.footer-input input:hover,
+.footer-input input:active {
   border-bottom: 2px solid;
+}
+
+#map {
+  height: 180px;
 }

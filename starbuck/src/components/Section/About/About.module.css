@@ -1,0 +1,19 @@
+.about {
+  margin-top: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*ABOUT CONTENTS---------------------------------------*/
+
+.about-contents {
+  max-width: 40%;
+  font-size: 16px;
+  text-align: center;
+  line-height: 28px;
+}
+
+.about img {
+  max-width: 100%;
+}

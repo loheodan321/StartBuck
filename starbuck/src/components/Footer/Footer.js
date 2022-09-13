@@ -9,7 +9,7 @@ const Footer = () => {
           A: 81 Le Van Duyet, Ward 3, Binh Thanh Distric, HCM City
         </div>
         <div className={style["telephone"]}>T: 0933237470</div>
-        <div className={style["email"]}>E: yourEmail@gmail.com</div>
+        <div className={style["email"]}>E: thanhdeptrai0307@gmail.com</div>
       </div>
       <div className={style["footer-input"]}>
         <form>
