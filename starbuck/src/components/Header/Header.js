@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 import style from "./Header.module.css";
 
 const Header = () => {
@@ -13,10 +15,21 @@ const Header = () => {
       <div className={style["header-menu"]}>
         <nav>
           <ul>
-            <li>Home</li>
-            <li>Shop</li>
-            <li>About US</li>
-            <li>Customer Service</li>
+            <NavLink activeClassName={style["nav-active"]} to="/home">
+              Home
+            </NavLink>
+            <NavLink activeClassName={style["nav-active"]} to="/shop">
+              Shop
+            </NavLink>
+            <NavLink activeClassName={style["nav-active"]} to="/about">
+              About US
+            </NavLink>
+            <NavLink
+              activeClassName={style["nav-active"]}
+              to="/customer-service"
+            >
+              Customer Service
+            </NavLink>
           </ul>
         </nav>
       </div>

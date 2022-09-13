@@ -40,12 +40,18 @@
   list-style: none;
 }
 
-.header-menu li {
+.header-menu a {
+  color: white;
+  text-decoration: none;
   transition: all 0.2s;
 }
 
-.header-menu li:hover {
+.header-menu a:hover {
   opacity: 0.6;
+}
+
+.header-menu .nav-active {
+  color: #ffae36;
 }
 
 /*HEADER USER---------------------------------------*/
