@@ -1,0 +1,146 @@
+/*GLOBAL CSS---------------------------------------*/
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn {
+  width: 240px;
+  height: 45px;
+  border: none;
+  font-size: 24px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: white;
+  background-color: #ffce86;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  color: #ffce86;
+  background-color: white;
+}
+
+/*HOME HERO SECTION---------------------------------------*/
+
+.home-hero-secion {
+  width: 100%;
+  height: 900px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: 50% 50%;
+  background-image: url(https://images.unsplash.com/photo-1609610006275-f26a59d76621?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.home-hero-secion h1 {
+  font-size: 100px;
+  font-weight: 400;
+  letter-spacing: 32px;
+  text-transform: uppercase;
+}
+
+.home-hero-secion h2 {
+  font-size: 48px;
+  font-weight: 400;
+}
+
+/*HOME COLLECTION---------------------------------------*/
+.home-collection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+.home-context {
+  width: 40%;
+}
+.home-context h1 {
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  font-weight: 200;
+}
+
+.home-items {
+  width: 95%;
+  background-color: whitesmoke;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.item {
+  height: 540px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.best-seller {
+  position: absolute;
+  font-size: 14px;
+  color: white;
+  background-color: black;
+  padding: 4px 16px;
+  left: 0px;
+}
+
+.item-more-detail {
+  position: absolute;
+  left: 0px;
+  bottom: 160px;
+  width: 100%;
+  height: 50px;
+  overflow: hidden;
+}
+
+.item-more-detail .quick-view {
+  height: 100%;
+  width: 100%;
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: black;
+  background-color: whitesmoke;
+  transform: translateY(50px);
+}
+
+.item:hover .quick-view {
+  cursor: pointer;
+  transform: translateY(-12px);
+}
+
+.item:hover {
+  cursor: pointer;
+}
+
+.item img {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+}
+
+.item button {
+  margin-top: 12px;
+  width: 95%;
+  height: 40px;
+  border: none;
+  color: white;
+  background-color: white;
+  transition: all 0.4s;
+}
+
+.item:hover .add-to-cart {
+  cursor: pointer;
+  background-color: black;
+}

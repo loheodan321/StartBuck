@@ -1,3 +1,10 @@
+/*GLOBAL CSS INFO---------------------------------------*/
+
+/* Color:
+    BACKGROUND:BLACK
+    COLOR:WHITE,#ffae36 
+*/
+
 .app {
   max-width: 100%;
   display: flex;
@@ -13,4 +20,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.section {
+  position: absolute;
+  top: 70px;
+  left: 0px;
+  width: 100%;
+  height: auto;
+  z-index: -1;
 }

@@ -1,5 +1,6 @@
 import style from "./App.module.css";
 import Header from "./components/Header/Header";
+import Home from "./components/Section/Home/Home";
 
 function App() {
   return (
@@ -7,7 +8,9 @@ function App() {
       <div className={style["header"]}>
         <Header />
       </div>
-      <div className={style["section"]}></div>
+      <div className={style["section"]}>
+        <Home />
+      </div>
       <div className={style["footer"]}></div>
     </div>
   );
