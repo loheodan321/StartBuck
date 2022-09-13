@@ -6,6 +6,7 @@ import Header from "./components/Header/Header";
 import About from "./components/Section/About/About";
 import CustomerService from "./components/Section/CustomerService/CustomerService";
 import Home from "./components/Section/Home/Home";
+import Product from "./components/Section/Product/Product";
 import QuickView from "./components/Section/QuickView/QuickView";
 
 function App() {
@@ -25,10 +26,15 @@ function App() {
             <Route path="/home" exact>
               <Home />
             </Route>
-            <Route path="/home/:ProductID">
+            <Route path="/home/">
               <QuickView />
             </Route>
-            <Route path="/product"></Route>
+            <Route path="/product" exact>
+              <Product />
+            </Route>
+            <Route path="/product/:productID">
+              <QuickView />
+            </Route>
             <Route path="/about">
               <About />
             </Route>
