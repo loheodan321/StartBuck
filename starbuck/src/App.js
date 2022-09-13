@@ -2,6 +2,7 @@ import style from "./App.module.css";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import About from "./components/Section/About/About";
+import CustomerService from "./components/Section/CustomerService/CustomerService";
 import Home from "./components/Section/Home/Home";
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
       </div>
       <div className={style["lower"]}>
         <div className={style["section"]}>
-          <About />
+          <CustomerService />
         </div>
         <div className={style["footer"]}>
           <Footer />
