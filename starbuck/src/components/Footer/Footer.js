@@ -1,6 +1,10 @@
 import style from "./Footer.module.css";
 
 const Footer = () => {
+  const submitHandler = (event) => {
+    event.preventDefault();
+  };
+
   return (
     <div className={style["footer"]}>
       <div className={style["footer-contents"]}>
@@ -12,10 +16,10 @@ const Footer = () => {
         <div className={style["email"]}>E: thanhdeptrai0307@gmail.com</div>
       </div>
       <div className={style["footer-input"]}>
-        <form>
+        <form onSubmit={submitHandler}>
           <input placeholder="Name" />
           <input placeholder="Email" />
-          <button className={style["btn"]}>Subcribte now</button>
+          <button className={style["btn"]}>Subcribe now</button>
         </form>
       </div>
     </div>
