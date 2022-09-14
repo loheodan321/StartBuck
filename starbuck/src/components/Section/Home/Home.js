@@ -7,14 +7,7 @@ const Home = () => {
         <h1>Starbuck</h1>
         <div>
           <h2>Girl with red hat</h2>
-          <button
-            onClick={() => {
-              console.log("cc");
-            }}
-            className={style["btn"]}
-          >
-            Shop now
-          </button>
+          <button className={style["btn"]}>Shop now</button>
         </div>
       </div>
       <div className={style["home-collection"]}>

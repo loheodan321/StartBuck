@@ -6,6 +6,7 @@ import Header from "./components/Header/Header";
 import About from "./components/Section/About/About";
 import CustomerService from "./components/Section/CustomerService/CustomerService";
 import Home from "./components/Section/Home/Home";
+import NotFound from "./components/Section/NotFound/NotFound";
 import Product from "./components/Section/Product/Product";
 import QuickView from "./components/Section/QuickView/QuickView";
 
@@ -23,11 +24,8 @@ function App() {
             <Route path="/" exact>
               <Redirect to="/home" />
             </Route>
-            <Route path="/home" exact>
+            <Route path="/home">
               <Home />
-            </Route>
-            <Route path="/home/">
-              <QuickView />
             </Route>
             <Route path="/product" exact>
               <Product />
@@ -40,6 +38,9 @@ function App() {
             </Route>
             <Route path="/customer-service">
               <CustomerService />
+            </Route>
+            <Route path="*">
+              <NotFound />
             </Route>
           </Switch>
         </div>
