@@ -1,27 +1,31 @@
 import React from "react";
 import ReactDom from "react-dom";
-import { useParams, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import style from "./QuickView.module.css";
 
-function BackDrop() {
+const BackDrop = () => {
   return <div className={style.backdrop} />;
-}
+};
 
-function OverLay(props) {
+const OverLay = (props) => {
   const data = props.data;
+
   return (
     <div className={style["modal"]}>
       <div className={style["quickview"]}>
         <div className={style["quickview-item"]}>
-          <img src={data.imgLink} />
+          <img src={data.imgLink} alt={`img-${data.id}`} />
           <div className={style["quickview-contents"]}>
             <h1>{data.name}</h1>
             <p>$ {data.price}</p>
             <label>Quantity</label>
             <input type="number" placeholder="1" min="0" />
             <button>Add to cart</button>
-            <Link to="/product/1" href="#">
+            <Link
+              onClick={() => localStorage.setItem("data", JSON.stringify(data))}
+              to={`/product/${data.id}`}
+            >
               View More Details
             </Link>
           </div>
@@ -32,7 +36,7 @@ function OverLay(props) {
       </div>
     </div>
   );
-}
+};
 
 const QuickView = (props) => {
   return (

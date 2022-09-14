@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import QuickView from "../QuickView/QuickView";
 
 import style from "./Home.module.css";
@@ -84,12 +85,11 @@ const Home = () => {
     data: null,
   });
 
-  const createQuickItem = (event) => {
+  const createQuickItem = () => {
     setQuickItem((pre) => {
       return { showQuickView: !pre.showQuickView, data: pre.data };
     });
   };
-  console.log(quickItem);
 
   return (
     <>
@@ -117,14 +117,14 @@ const Home = () => {
                 <img src={item.imgLink} alt={`img-item-${item.id}`} />
                 <div className={style["item-more-detail"]}>
                   <button
-                    onClick={() =>
+                    onClick={() => {
                       setQuickItem((pre) => {
                         return {
                           showQuickView: !pre.showQuickView,
                           data: item,
                         };
-                      })
-                    }
+                      });
+                    }}
                     className={style["quick-view"]}
                   >
                     Quick View

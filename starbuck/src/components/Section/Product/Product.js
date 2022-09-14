@@ -1,14 +1,19 @@
 import style from "./Product.module.css";
+import React from "react";
 
-const Product = () => {
+const Product = (props) => {
+  const unParseData = localStorage.getItem("data");
+
+  const parsedData = JSON.parse(unParseData);
+
   return (
     <div className={style["product"]}>
       <div className={style["item"]}>
         <div className={style["product-item"]}>
-          <img src="https://images.unsplash.com/photo-1595468136654-faa5b6ea3ebb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" />
+          <img src={parsedData.imgLink} alt={`img-${parsedData.id}`} />
           <div className={style["product-contents"]}>
-            <h1>This is Product</h1>
-            <p>$ 99</p>
+            <h1>{parsedData.name}</h1>
+            <p>$ {parsedData.price}</p>
             <label>Quantity</label>
             <input type="number" placeholder="1" min="0" />
             <button>Add to cart</button>

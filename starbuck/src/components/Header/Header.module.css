@@ -41,6 +41,7 @@
 }
 
 .header-menu a {
+  padding: 12px 24px;
   color: white;
   text-decoration: none;
   transition: all 0.2s;
