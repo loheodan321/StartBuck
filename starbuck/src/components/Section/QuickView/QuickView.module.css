@@ -6,7 +6,7 @@
 .quickview-item {
   margin: 12px;
   padding: 12px;
-  width: 50%;
+  min-width: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -73,9 +73,8 @@
 
 .modal {
   position: fixed;
-  top: 30vh;
-  left: 10%;
-  width: 80%;
+  top: 20%;
+  left: 25%;
+  min-width: 50%;
   z-index: 100;
-  overflow: hidden;
 }

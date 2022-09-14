@@ -8,7 +8,6 @@ import CustomerService from "./components/Section/CustomerService/CustomerServic
 import Home from "./components/Section/Home/Home";
 import NotFound from "./components/Section/NotFound/NotFound";
 import Product from "./components/Section/Product/Product";
-import QuickView from "./components/Section/QuickView/QuickView";
 
 function App() {
   return (
