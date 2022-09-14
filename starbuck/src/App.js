@@ -27,11 +27,8 @@ function App() {
             <Route path="/home">
               <Home />
             </Route>
-            <Route path="/product" exact>
-              <Product />
-            </Route>
             <Route path="/product/:productID">
-              <QuickView />
+              <Product />
             </Route>
             <Route path="/about">
               <About />

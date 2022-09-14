@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDom from "react-dom";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 import style from "./QuickView.module.css";
 
@@ -20,7 +20,9 @@ function OverLay(props) {
             <label>Quantity</label>
             <input type="number" placeholder="1" min="0" />
             <button>Add to cart</button>
-            <a href="#">View More Details</a>
+            <Link to="/product/1" href="#">
+              View More Details
+            </Link>
           </div>
           <button onClick={props.onClick} className={style["exit-button"]}>
             x

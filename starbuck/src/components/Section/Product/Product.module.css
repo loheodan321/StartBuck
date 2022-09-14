@@ -5,10 +5,11 @@
   justify-content: center;
   gap: 32px;
 }
+/*PRODUCT LIST ITEM----------------------------------*/
 
+/* ITEM----------------------------------------------*/
 .item {
   width: 80%;
-  background-color: #e6e6e6;
   display: flex;
   flex-direction: column;
   align-items: center;
