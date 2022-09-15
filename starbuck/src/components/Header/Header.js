@@ -1,8 +1,15 @@
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
 
 import style from "./Header.module.css";
 
 const Header = () => {
+  const [cartState, setCartState] = useState(false);
+
+  const changeHandler = () => {
+    setCartState(!cartState);
+  };
+
   return (
     <div className={style["header"]}>
       <div className={style["logo-site"]}>
@@ -31,8 +38,13 @@ const Header = () => {
         </nav>
       </div>
       <div className={style["header-user"]}>
-        <span>Cart</span>
+        <button onClick={changeHandler}>Cart</button>
         <div>0</div>
+        <div className={`${style["test"]}`}>
+          <div className={`${style["cart"]} ${cartState && style["active"]}`}>
+            cart
+          </div>
+        </div>
       </div>
     </div>
   );
