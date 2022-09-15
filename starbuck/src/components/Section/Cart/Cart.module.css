@@ -1,0 +1,102 @@
+.cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: whitesmoke;
+}
+
+.cart .btn {
+  width: 100%;
+  height: 40px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: whitesmoke;
+  background-color: #ffae67;
+}
+
+.cart .btn:hover {
+  cursor: pointer;
+}
+
+/*CART HEADER---------------------------------------*/
+
+.cart-header {
+  text-align: center;
+  width: 100%;
+  height: 60px;
+  background-color: #ffae67;
+}
+
+/*CART SECTION---------------------------------------*/
+
+.cart-section {
+  color: black;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/*CART ITEM------------------------------------------*/
+.quickview-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 24px;
+  margin: 12px 6px;
+  border: 1px solid white;
+}
+.quickview-item img {
+  object-fit: cover;
+  min-width: 148px;
+  max-height: 100px;
+}
+
+/*CART CONTENTS------------------------------------------*/
+
+.quickview-contents {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.quickview-contents h1 {
+  font-size: 14px;
+}
+
+.quickview-contents span {
+  font-size: 12px;
+}
+
+.quickview-contents input {
+  width: 68px;
+  height: 22px;
+}
+
+/*CART CLEAR------------------------------------------*/
+
+.quickview-clear {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  align-items: flex-end;
+  gap: 28px;
+}
+
+.quickview-clear button {
+  border: none;
+  width: 60px;
+  height: 30px;
+  font-size: 14px;
+  color: red;
+  background-color: whitesmoke;
+  transition: all 0.2s;
+}
+
+.quickview-clear button:hover {
+  cursor: pointer;
+}

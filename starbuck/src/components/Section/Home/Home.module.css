@@ -134,6 +134,7 @@
   margin-top: 12px;
   width: 95%;
   height: 40px;
+  font-size: 16px;
   border: none;
   color: white;
   background-color: white;
@@ -143,4 +144,8 @@
 .item:hover .add-to-cart {
   cursor: pointer;
   background-color: black;
+}
+
+.add-to-cart:hover {
+  opacity: 0.6;
 }

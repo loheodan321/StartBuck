@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import { useState } from "react";
 
 import style from "./Header.module.css";
+import Cart from "../Section/Cart/Cart";
 
 const Header = () => {
   const [cartState, setCartState] = useState(false);
@@ -42,7 +43,7 @@ const Header = () => {
         <div>0</div>
         <div className={`${style["test"]}`}>
           <div className={`${style["cart"]} ${cartState && style["active"]}`}>
-            cart
+            <Cart />
           </div>
         </div>
       </div>
