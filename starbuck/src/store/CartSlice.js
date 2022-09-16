@@ -2,9 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   productlist: [],
-  calLength() {
-    return this.productlist.length;
-  },
+  amount: 0,
+  totalPrice: 0,
 };
 
 const cartSlice = createSlice({
@@ -12,9 +11,32 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addCart(state, actions) {
-      state.productlist = [...actions.payload];
+      //TÌM KIẾM NẾU NHƯ ITEM ĐÃ CÓ SẴN TRONG GIỎ HÀNG
+      const findingItem = state.productlist.find(
+        (item) => item.id === actions.payload.id
+      );
+
+      //NẾU NHƯ KHÔNG CÓ THÌ THÊM MỚI, AMOUNT++ VÀ TẠO RIÊNG MỘT AMOUT
+      //CỦA ITEM ĐÓ
+      if (!findingItem) {
+        state.productlist = [...state.productlist, actions.payload];
+        state.amount++;
+        state.totalPrice += actions.payload.price;
+      }
+
+      //NẾU NHƯ CÓ RỒI THÌ CHỈ AMOUNT++ VÀ TOTALPRICE++
+      else {
+        state.productlist = [...state.productlist];
+        state.amount++;
+        state.totalPrice += actions.payload.price;
+      }
     },
-    removeCart(state) {},
+    removeCart(state, actions) {
+      //TÌM KIẾM NẾU NHƯ ITEM ĐÃ CÓ SẴN TRONG GIỎ HÀNG
+      const findingItem = state.productlist.find(
+        (item) => item.id === actions.payload.id
+      );
+    },
   },
 });
 
