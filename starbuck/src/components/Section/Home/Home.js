@@ -1,85 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
+import useFetch from "../../../FetchHook/useFetch";
+
+import { cartSliceAction } from "../../../store/CartSlice";
 import QuickView from "../QuickView/QuickView";
 
 import style from "./Home.module.css";
 
-const dummyData = [
-  {
-    id: 1,
-    name: "Product 01",
-    price: 69,
-    imgLink:
-      "https://images.unsplash.com/photo-1595468136654-faa5b6ea3ebb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-    description: "This is description",
-  },
-  {
-    id: 2,
-    name: "Product 02",
-    price: 69,
-    imgLink:
-      "https://images.unsplash.com/photo-1631424542224-54dc0ddb69b4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2072&q=80",
-    description: "This is description",
-  },
-  {
-    id: 3,
-    name: "Product 03",
-    price: 69,
-    imgLink:
-      "https://images.unsplash.com/photo-1626250668234-c02b35a88be6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=686&q=80",
-    description: "This is description",
-  },
-  {
-    id: 4,
-    name: "Product 04",
-    price: 69,
-    imgLink:
-      "https://images.unsplash.com/photo-1621236378699-8597faf6a176?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=723&q=80",
-    description: "This is description",
-  },
-  {
-    id: 5,
-    name: "Product 05",
-    price: 69,
-    imgLink:
-      "https://images.unsplash.com/photo-1596685025950-972199f62c0a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=80",
-    description: "This is description",
-  },
-  {
-    id: 6,
-    name: "Product 06",
-    price: 69,
-    imgLink:
-      "https://images.unsplash.com/photo-1617916487369-e0bb123f3637?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=686&q=80",
-    description: "This is description",
-  },
-  {
-    id: 7,
-    name: "Product 07",
-    price: 69,
-    imgLink:
-      "https://images.unsplash.com/photo-1617916440036-5977832e49d6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=686&q=80",
-    description: "This is description",
-  },
-  {
-    id: 8,
-    name: "Product 08",
-    price: 69,
-    imgLink:
-      "https://images.unsplash.com/photo-1596685679283-f17855e14f5f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=686&q=80",
-    description: "This is description",
-  },
-  {
-    id: 9,
-    name: "Product 09",
-    price: 69,
-    imgLink:
-      "https://images.unsplash.com/photo-1616205255807-b55f2513eced?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=686&q=80",
-    description: "This is description",
-  },
-];
-
 const Home = () => {
+  const dispatch = useDispatch();
+  const { getData } = useFetch();
+  const [productList, setProductList] = useState([]);
+
   const [quickItem, setQuickItem] = useState({
     showQuickView: false,
     data: null,
@@ -90,6 +23,14 @@ const Home = () => {
       return { showQuickView: !pre.showQuickView, data: pre.data };
     });
   };
+
+  useEffect(() => {
+    const data = getData(
+      "https://starbuck-efbbd-default-rtdb.asia-southeast1.firebasedatabase.app/products/-NC-27PG6jpDqDdrndK8.json"
+    ).then((data) => {
+      setProductList((pre) => [...pre, ...data]);
+    });
+  }, []);
 
   return (
     <>
@@ -112,7 +53,7 @@ const Home = () => {
             </p>
           </div>
           <div className={style["home-items"]}>
-            {dummyData.map((item) => (
+            {productList.map((item) => (
               <div className={style["item"]} key={item.id}>
                 <img src={item.imgLink} alt={`img-item-${item.id}`} />
                 <div className={style["item-more-detail"]}>
@@ -132,7 +73,14 @@ const Home = () => {
                 </div>
                 <p>{item.name}</p>
                 <span>$ {item.price}</span>
-                <button className={style["add-to-cart"]}>Add to cart</button>
+                <button
+                  onClick={() => {
+                    dispatch(cartSliceAction.addCart(item));
+                  }}
+                  className={style["add-to-cart"]}
+                >
+                  Add to cart
+                </button>
               </div>
             ))}
           </div>

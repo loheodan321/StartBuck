@@ -1,11 +1,14 @@
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 import style from "./Header.module.css";
 import Cart from "../Section/Cart/Cart";
 
 const Header = () => {
   const [cartState, setCartState] = useState(false);
+
+  const number = useSelector((st) => st.cartSlice.calLength());
 
   const changeHandler = () => {
     setCartState(!cartState);
@@ -40,7 +43,7 @@ const Header = () => {
       </div>
       <div className={style["header-user"]}>
         <button onClick={changeHandler}>Cart</button>
-        <div>0</div>
+        <div>{number}</div>
         <div className={`${style["test"]}`}>
           <div className={`${style["cart"]} ${cartState && style["active"]}`}>
             <Cart />
